@@ -12,6 +12,19 @@ code {
     monospace;
 }
 
+main {
+  background-color: rgb(32, 32, 32);
+  color: white;
+}
+
+image {
+  max-height: 300px !important;
+}
+
+Card img {
+  max-height: 300px;
+}
+
 .footer-wrapper {
   position: fixed;
   bottom: 0;
