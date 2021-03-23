@@ -1,6 +1,14 @@
-# Getting Started with Create React App
+# Assigment Objectives
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Install and use the create-react-app boilerplate to create your new react application
+2. Install and set up bootstrap + react-bootstrap in your app
+3. Create a MyNav component which will render a bootstrap navigation bar with the following links: Home, About and Browse. Note: we don't know how to perform navigation yet, so for now just put "#" as the href for each one on them
+4. Create a MyFooter component which will render a footer for the page
+5. Create a Welcome component with a Jumbotron and a subtitle for your shop
+6. Create a Latest Release component. This component should read from one of the json files and print out the cover of the books
+7. Push everything on GitHub and publish on Eduflow before 17:00 CE
+   T
+   This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
