@@ -18,7 +18,7 @@ export async function ADD_COMMENT(comment = {}) {
 
     if (response.ok) {
       const _DATA = await response.json()
-      console.log(_DATA)
+      console.log('service.ADD_COMMENT' + _DATA)
       return _DATA
     }
   } catch (err) {
