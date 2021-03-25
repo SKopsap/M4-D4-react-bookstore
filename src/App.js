@@ -1,22 +1,22 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 
 // Components
-import NavBar from "./components/Navbar";
-import Hero from "./components/Hero";
-import BookCard from "./components/BookCard";
-import Footer from "./components/Footer";
+import NavBar from './components/Navbar'
+import Hero from './components/Hero'
+import BookCard from './components/BookCard'
+import Footer from './components/Footer'
 
 // mock data
-import { historyBooks } from "./mocks/history-books";
+import { historyBooks } from './mocks/history-books'
 
 // Bootstrap Components and custom styles
-import { Container, Row, Col } from "react-bootstrap";
-import "./App.css";
+import { Container, Row, Col } from 'react-bootstrap'
+import './App.css'
 
 class App extends Component {
   state = {
-    historyBooks: historyBooks,
-  };
+    historyBooks: historyBooks
+  }
   render() {
     return (
       <div className="App">
@@ -36,7 +36,7 @@ class App extends Component {
                     <Col key={book.asin}>
                       <BookCard {...book} />
                     </Col>
-                  );
+                  )
                 })}
               </Row>
             </section>
@@ -44,8 +44,8 @@ class App extends Component {
         </main>
         <Footer />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

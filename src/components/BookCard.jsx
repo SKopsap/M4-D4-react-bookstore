@@ -12,8 +12,7 @@ const BookCard = ({ title, img, price, category }) => {
       <Card.Body>
         <Card.Title className="truncate">{title}</Card.Title>
         <Card.Text>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
-          provident aperiam. Pariatur, minus. Dolore, error.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </Card.Text>
         <Card.Text>£ {price.toFixed(2)}</Card.Text>
         <Card.Text>{category}</Card.Text>

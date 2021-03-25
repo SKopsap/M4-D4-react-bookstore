@@ -1,78 +1,46 @@
 # Assigment Objectives
 
-1. Install and use the create-react-app boilerplate to create your new react application
-2. Install and set up bootstrap + react-bootstrap in your app
-3. Create a MyNav component which will render a bootstrap navigation bar with the following links: Home, About and Browse. Note: we don't know how to perform navigation yet, so for now just put "#" as the href for each one on them
-4. Create a MyFooter component which will render a footer for the page
-5. Create a Welcome component with a Jumbotron and a subtitle for your shop
-6. Create a Latest Release component. This component should read from one of the json files and print out the cover of the books
-7. Push everything on GitHub and publish on Eduflow before 17:00 CE
-   T
-   This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Improve your Bookstore!
+In this exercise you are gonna update your own book store!
+Start from your previous React book store. We want you to give the user the ability to add comments to the books. All users can add comments like a "real" review :)
 
-## Available Scripts
+        API INFO:
 
-In the project directory, you can run:
+        You have a CRUD endpoint for comments on:
 
-### `yarn start`
+        https://striveschool-api.herokuapp.com/api/comments/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+        This means you can GET, DELETE, POST, PUT data from there.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+        The Comment structure is this:
 
-### `yarn test`
+        {
+          "comment": "A good book but definitely I don't like many parts of the plot",
+          "rate": 3,
+          "elementId": "0316438960"
+        }
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+        Where:
+        - comment is the text of comment inserted by the user
+        - rate is a value between 1 and 5
+        - elementId is the ASIN of the book
+        - use usual Authentication (grab a new token on https://strive.school/studentlogin if you're previous one is expired)
 
-### `yarn build`
+        !IMPORTANT!
+        You can't get ALL the comments. You have to specify the ElementID / ASIN in the query:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+        https://striveschool-api.herokuapp.com/api/comments/{ASIN}
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+        Doing so, you'll get all the comments for that specific book.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Create a CommentArea component. When the user clicks on a book, this component should be displayed.
+CommentArea component contains the picture of the book, and two subcomponents: CommentsList and AddComment.
+CommentsList holds a list of comments about the selected book, the comments array is passed as a prop. Each comment is made by the same SingleComment component.
+AddComment contains a form for adding a text comment and a rating (from 1 to 5). This component should allow the user to POST a new Comment on the selected Book
+Add, to each "Comment", a button for DELETING it. Create a request towards https://striveschool-api.herokuapp.com/api/comments/{commentId}
+Create a Loading component. This loading component should appear on the page when an remote request is ongoing.
+Create an error handler for the remote requests. If something goes wrong, an error message should appear!
+Publish everything on GitHub
+Add to CommentList component the ability to filter comments using a text box. The filter will display only the comments that contain the specified string in the text or in the author properties.
