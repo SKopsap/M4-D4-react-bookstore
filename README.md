@@ -33,8 +33,6 @@ Start from your previous React book store. We want you to give the user the abil
 
         Doing so, you'll get all the comments for that specific book.
 
-
-
 Create a CommentArea component. When the user clicks on a book, this component should be displayed.
 CommentArea component contains the picture of the book, and two subcomponents: CommentsList and AddComment.
 CommentsList holds a list of comments about the selected book, the comments array is passed as a prop. Each comment is made by the same SingleComment component.

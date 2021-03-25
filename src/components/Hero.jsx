@@ -1,6 +1,6 @@
-import React from "react";
-import { Jumbotron, Container } from "react-bootstrap";
-import ReactPlayer from "react-player";
+import React from 'react'
+import { Jumbotron, Container } from 'react-bootstrap'
+import ReactPlayer from 'react-player'
 
 // https://www.youtube.com/watch?v=mkgylOJSdhE
 
@@ -10,15 +10,15 @@ import ReactPlayer from "react-player";
 
 const Hero = () => {
   return (
-    <Jumbotron fluid style={{ backgroundColor: "black", marginTop: "3rem" }}>
+    <Jumbotron fluid style={{ backgroundColor: 'black', marginTop: '3rem' }}>
       <Container bg="dark">
-        <ReactPlayer
+        {/* <ReactPlayer
           controls="false"
           autoPlay="true"
           width="100%"
           height="100%"
           url="https://www.youtube.com/watch?v=4vIQON2fDWMk"
-        />
+        /> */}
         <h1>The live long book club</h1>
         <p>
           Welcome to world of the living legends bookstore. Only life long
@@ -26,7 +26,7 @@ const Hero = () => {
         </p>
       </Container>
     </Jumbotron>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

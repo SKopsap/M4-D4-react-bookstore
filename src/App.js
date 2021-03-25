@@ -6,17 +6,35 @@ import Hero from './components/Hero'
 import BookCard from './components/BookCard'
 import Footer from './components/Footer'
 
-// mock data
+// Mocks
 import { historyBooks } from './mocks/history-books'
+
+// Services
+import { GET_ALL_COMMENTS, ADD_COMMENT } from './services/comments.service'
 
 // Bootstrap Components and custom styles
 import { Container, Row, Col } from 'react-bootstrap'
 import './App.css'
 
+// The Comment structure is this:
+
+// {
+//   "comment": "A good book but definitely I don't like many parts of the plot",
+//   "rate": 3,
+//   "elementId": "0316438960"
+// }
+
 class App extends Component {
   state = {
-    historyBooks: historyBooks
+    historyBooks: historyBooks,
+    comments: []
   }
+
+  async componentDidMount() {
+    const comments = await GET_ALL_COMMENTS()
+    this.setState({ comments: [comments, ...this.state.comments] })
+  }
+
   render() {
     return (
       <div className="App">
@@ -28,6 +46,7 @@ class App extends Component {
             <section>
               <Hero />
             </section>
+            <section>{/* COMMMENT FORM */}</section>
             <section>
               <h3>Releases</h3>
               <Row noGutters="false">
